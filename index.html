@@ -1,0 +1,40 @@
+<script>
+    //FUNCTION FOR COMPUTER'S TURN
+    function computerPlay() {
+        let compNum = Math.round(Math.random() * 3) + 1; 
+        if (compNum === 1) { 
+            console.log("Rock");
+            return "Rock";
+        } else if (compNum === 2) {
+            console.log("Paper");
+            return "Paper";
+        } else {
+            console.log("Sissors");
+            return "Sissors";
+        }
+    };
+
+    const playerSelection = prompt("Please enter 'Rock', 'Paper', or 'Sissors'");
+    const computerSelection = computerPlay();
+    
+    //FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SISSORS
+    function playRound(playerSelection, computerSelection) {
+        if (computerSelection != "Rock" && computerSelection != "Paper") {
+            return "You win! Rock beats " + computerSelection + "!";
+        } else if (computerSelection != "Rock" && computerSelection != "Sissors") {
+            return "You lose! Rock does not beat " + computerSelection + ".";
+        } else {
+            return "Draw! You both threw Rock";
+        }
+    };
+    
+    //PLAYS THE GAME 5 TIMES
+    function game() {
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+    }
+
+</script>
